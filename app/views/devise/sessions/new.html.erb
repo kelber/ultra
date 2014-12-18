@@ -1,0 +1,28 @@
+
+<div class="container">
+<div class="col-md-5 well">
+	
+	<h2><%= image_tag("logoultra250CinzaEscuro.png" ,size: "100x100") %> Login </h2>
+
+	<hr>
+	<form>
+			<fieldset>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</fieldset>
+</form>
+</div>
+</div>
