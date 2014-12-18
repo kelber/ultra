@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :matrizs
+
+
+  devise_for :admins
   root 'welcome#index'
 
 	# get 'welcome/sobre' modelo velho
@@ -15,6 +17,7 @@ end
 
 # Welcome page c/ telas empresa,contato,franchising...etc
 ##### devise 
+##### preparar matriz
 ## Cadastro de Estados
 ### Cadastro de Cidades - Nested
 #### Cadastro de Lojas

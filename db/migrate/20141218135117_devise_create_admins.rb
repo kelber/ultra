@@ -1,9 +1,8 @@
-class DeviseCreateMatrizs < ActiveRecord::Migration
+class DeviseCreateAdmins < ActiveRecord::Migration
   def change
-    create_table(:matrizs) do |t|
+    create_table(:admins) do |t|
       ## Database authenticatable
-
-      t.string :name 
+      t.string :name
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -36,9 +35,9 @@ class DeviseCreateMatrizs < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :matrizs, :email,                unique: true
-    add_index :matrizs, :reset_password_token, unique: true
-    # add_index :matrizs, :confirmation_token,   unique: true
-    # add_index :matrizs, :unlock_token,         unique: true
+    add_index :admins, :email,                unique: true
+    add_index :admins, :reset_password_token, unique: true
+    # add_index :admins, :confirmation_token,   unique: true
+    # add_index :admins, :unlock_token,         unique: true
   end
 end
