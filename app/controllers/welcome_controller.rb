@@ -6,8 +6,7 @@ class WelcomeController < ApplicationController
   def sobre
   end
 
-  def lojas
-  end
+  
 
   def franquias
   end

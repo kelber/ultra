@@ -39,12 +39,14 @@
 				<% if admin_signed_in? %>
 			<ul class="nav navbar-nav navbar-right">
 					<li>	
-					<%= link_to current_admin.email , edit_admin_registration_path %>
+					<%= link_to current_admin.email + " ( " "#{current_admin.name}"  " )" , edit_admin_registration_path %>
 					</li>
 					<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
+            <li>
+            	<%= link_to 'Estados', estados_path %>
+            </li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
@@ -67,7 +69,7 @@
 				<%= link_to 'Sobre', :sobre %>
 			</li>
 			<li>
-				<%= link_to 'Lojas', :lojas %>
+				<%= link_to 'Lojas', :estados %>
 			</li>
 			<li>
 				<%= link_to 'Franquias', :franquias %>
@@ -88,14 +90,14 @@
 
 </div>
 
-
+<!-- 
 
 <div class="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<strong>
-		<% flash.each do |name,msg| %>
-<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-<% end %>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
 	</strong>
 </div> 
 
@@ -105,10 +107,12 @@
 <% end %>
  -->
 
-
+<div class="container">
 
 <%= yield %>
 
+
+</div>
 </body>
 </html>
 

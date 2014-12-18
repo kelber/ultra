@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+	resources :estados 
 
   get 'adminarea/index'
 
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
 
 	# get 'welcome/sobre' modelo velho
   get 'sobre', to: 'welcome#sobre', as: :sobre
-  get 'lojas', to: 'welcome#lojas', as: :lojas
+  # get 'lojas', to: 'welcome#lojas', as: :lojas
 	get 'franquias', to: 'welcome#franquias', as: :franquias
 	get 'contato', to: 'welcome#contato', as: :contato
 end
