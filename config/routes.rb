@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'adminarea/index'
+
   devise_for :admins
   root 'welcome#index'
 

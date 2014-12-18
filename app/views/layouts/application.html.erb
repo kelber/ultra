@@ -12,6 +12,10 @@
 <body>
 
 <nav class="navbar navbar-inverse" role="navigation">
+
+<div class="container">
+
+
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -22,6 +26,7 @@
 		</button>
 
 		<a>
+		<!-- <%= link_to image_tag( 'logoUltra.png', size: "50x50"), root_path, id: "logo" %> -->
 			<%= link_to "Ultra", root_path , class: "navbar-brand" %>
 		</a>
 	</div>
@@ -31,6 +36,33 @@
 		<ul class="nav navbar-nav">
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+				<% if admin_signed_in? %>
+			<ul class="nav navbar-nav navbar-right">
+					<li>	
+					<%= link_to current_admin.email , edit_admin_registration_path %>
+					</li>
+					<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+		
+					<li>
+					<%= link_to 'Log Out', destroy_admin_session_path,  method: :delete %>
+					</li>
+
+
+			</ul>
+
+
+
+			<% else %>
+
 			<li>
 				<%= link_to 'Sobre', :sobre %>
 			</li>
@@ -48,19 +80,30 @@
 		</ul>
 	</div><!-- /.navbar-collapse -->
 
+	<% end %>
+
 
 
 </nav>
-<!-- 
+
+</div>
+
+
 
 <div class="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong></strong>
-</div> -->
+	<strong>
+		<% flash.each do |name,msg| %>
+<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+<% end %>
+	</strong>
+</div> 
+
+<!-- 
 <% flash.each do |name,msg| %>
 <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 <% end %>
-
+ -->
 
 
 
