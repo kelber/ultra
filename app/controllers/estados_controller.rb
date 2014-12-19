@@ -2,14 +2,19 @@ class EstadosController < ApplicationController
 
 	before_action :find_estado, only: [:show]
 
-	 #  before_action :authenticate_admin! 
+#
+#  Nao esquecer de ligar.
+##############################################################
+	# before_action :authenticate_admin! 
 
 	def index
 		@estados = Estado.all
-
+    @cidades = Cidade.all
 	end
 
 	def show
+      @estado = Estado.find(params[:id])
+     
 	end
 
   def new
@@ -35,7 +40,7 @@ class EstadosController < ApplicationController
   end
 
   def estado_params
-  	params.require(:estado).permit(:name)
+  	params.require(:estado).permit(:name , :cidade_id)
   end
 
 

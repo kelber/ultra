@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
 
-	resources :estados 
+	resources :estados do
+			resources :cidades
+	end
+
+	resources :cidades
 
   get 'adminarea/index'
 
