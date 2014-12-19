@@ -2,10 +2,13 @@ Rails.application.routes.draw do
 
 
 	resources :estados do
-			resources :cidades
+			resources :cidades  ,dependent: :destroy
 	end
 
 	resources :cidades
+
+	resources :lojas
+
 
   get 'adminarea/index'
 

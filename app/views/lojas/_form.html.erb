@@ -1,0 +1,10 @@
+<%= simple_form_for @loja do |f| %>
+	<%= f.input :name, label: "Nome" %>
+	<%= f.collection_select :cidade_id, Cidade.all, :id, :name ,{ prompt: "Cadastrar Cidade" } ,class: "form-control" %>
+	<%= f.input :endereco %>
+	<%= f.input :telefone %>
+	<%= f.input :email %>
+	<%= f.input :owner %>
+	<%= f.input :mapa, input_html: { class: "form-control" }, label: "Mapa: Cadastrar Latitude e Longitude", placeholder: "-23.710250, -46.553102" %><Br>
+<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

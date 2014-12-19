@@ -11,4 +11,8 @@
 
 <% @estados.each do |estado| %>
 	<h3><%= link_to estado.name, estado %></h3>
+	<% if admin_signed_in? %>
+		<%= link_to 'Edit', edit_estado_path(estado), class: "btn btn-sm btn-default" %>
+			<%= link_to 'Delete', estado, method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm btn-danger"  %>
+		<% end %>
 <% end %>
