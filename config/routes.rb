@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 	end
 
 	resources :cidades
-
 	resources :lojas
 
 
@@ -15,15 +14,31 @@ Rails.application.routes.draw do
   devise_for :admins
   root 'welcome#index'
 
-	# get 'welcome/sobre' modelo velho
+	
   get 'sobre', to: 'welcome#sobre', as: :sobre
-  # get 'lojas', to: 'welcome#lojas', as: :lojas
 	get 'franquias', to: 'welcome#franquias', as: :franquias
 	get 'contato', to: 'welcome#contato', as: :contato
 end
 
 
-# ULTRA
+
+# Metodologia de Implatanção Sistema Ultravisao
+
+
+
+#  5W2H
+# What ? - > O que ?
+# Why ? -> Porque ?
+# Who ? -> Quem ?
+# How ? -> Como ?
+# How-much ? -> $$ ?
+# When ? -> Quando ?
+# Where ? -> Aonde ?
+
+#################################################
+
+
+# ULTRA - 1. Fase
 
 # Welcome page c/ telas empresa,contato,franchising...etc
 ##### devise 
@@ -35,4 +50,37 @@ end
 ######  Pronto
 ######## Deploy 
 #########################################################
+		###### PRONTO ###### 2x dias - ps. ajustar mapa detran concorrencia etc. ? x ROI
+
+
+
+
+
+# ULTRABOOK - 2. Fase
+
+
+# News -> Aberto ao Público e No Navbar
+##   "Abertas + 15 lojas no Brasil !!"
+### Noticias afins...
+
+
+################### Suporte ######################
+# Cadastrar Marca e Modelo
+# Cadastrar Veículo
+# Listagem de Veiculos para suporte dar o Ok completed_at
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

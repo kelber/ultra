@@ -11,6 +11,9 @@ class LojasController < ApplicationController
 	def show
 	end
 
+	def edit
+	end
+
 	def new
 		@loja = Loja.new
 	end
@@ -23,6 +26,29 @@ class LojasController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def update
+		if @loja.update(loja_params)
+			redirect_to @loja, notice: "Atualizado com Sucesso"
+		else
+			render 'edit'
+		end
+	end
+
+
+	def destroy
+		if @loja.destroy
+				redirect_to lojas_path, notice: "Loja Deletada com Sucesso"
+		end
+	end
+
+
+
+
+
+
+
+
 
 
 	private

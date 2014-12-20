@@ -2,13 +2,21 @@
 	
 <h1><%= image_tag("logoultra250CinzaEscuro.png", size: "100x100", alt: "Ultravisao") %> Lojas Ultravisao</h1>
 
-<%= link_to 'Cadastrar Loja', new_loja_path, class: "btn btn-primary"  %>
+
+
 <hr>
 
 
 <% @lojas.each do |loja| %>
 	<h3><%= link_to loja.name , loja %></h3>
+	<% if admin_signed_in? %>
+	<%= link_to 'Editar', edit_loja_path(loja) , class: "btn btn-sm btn-default" %>
+	
 
+	<%= link_to 'Deletar', loja, method: :delete, data: { confirm: "Tem Certeza?" }, class: "btn btn-sm btn-danger" %>
+	
+
+	<% end %>
 <% end %>
 
 

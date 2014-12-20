@@ -6,7 +6,9 @@
 <% if admin_signed_in? %>
 <%= link_to 'Cadastrar Estados', new_estado_path , class: "btn btn-primary"%>
 <%= link_to 'Cadastrar Cidades', new_estado_cidade_path(:estado_id), class: "btn btn-primary" %>
-<hr>
+<!-- 
+<%= link_to 'Cadastrar Loja', new_loja_path, class: "btn btn-primary"  %>
+ --><hr>
 <% end %>
 
 <% @estados.each do |estado| %>
