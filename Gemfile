@@ -19,7 +19,7 @@ gem 'simple_form', '~> 3.1.0'
 
 group :development, :test do
 	gem 'sqlite3'
-	gem 'rspec-rails', '~> 3.1.0'
+	gem 'rspec-rails'
 end
 
 group :test do

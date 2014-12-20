@@ -55,13 +55,9 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-        </li>
-		
-					<li>
+    				
 					<%= link_to 'Log Out', destroy_admin_session_path,  method: :delete %>
 					</li>
-
-
 			</ul>
 
 
@@ -78,8 +74,12 @@
 				<%= link_to 'Franquias', :franquias %>
 			</li>
 			<li>
+			<%= link_to 'Ultrabook', ultrabooks_index_path %>
+			</li>
+			<li>
 				<%= link_to 'Contato', :contato %>
 			</li>
+
 		</ul>
 			</li>
 		</ul>

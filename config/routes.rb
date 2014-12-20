@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'ultrabooks/index'
+
 	resources :estados do
 			resources :cidades  ,dependent: :destroy
 	end
