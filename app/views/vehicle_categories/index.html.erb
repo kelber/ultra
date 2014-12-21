@@ -1,0 +1,15 @@
+<h1><%= image_tag("logoultra250CinzaEscuro.png", size: "100x100", alt: "Ultravisao") %> Relação de Marcas</h1>
+<%= link_to 'Voltar', vehicle_categories_path, class: "btn btn-default" %>
+<br><br>
+
+	<%= link_to 'Cadastrar Marca', new_vehicle_category_path , class: "btn btn-primary" %>
+
+<hr>
+
+	<% @vehicle_categories.each do |c| %>
+		<h3><%= link_to c.name, c %></h3>
+
+		<% if admin_signed_in? %>
+			<%= link_to 'Delete', c, method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm btn-danger" %>
+		<% end %>
+	<% end %>

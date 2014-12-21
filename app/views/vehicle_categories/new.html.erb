@@ -1,0 +1,9 @@
+<h1>Cadastrar Marca</h1>
+<%= simple_form_for @vehicle_category do |f| %>
+	<%= f.input :name %>
+	<br>
+	<%= f.button :submit %>
+
+<% end %>
+
+<%= link_to 'Voltar', vehicle_categories_path %>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 	resources :cidades
 	resources :lojas
 
+	resources :vehicle_categories
+
 
   get 'adminarea/index'
 
