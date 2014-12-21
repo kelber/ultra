@@ -57,23 +57,4 @@ ActiveRecord::Schema.define(version: 20141219160622) do
     t.datetime "updated_at"
   end
 
-  create_table "matrizs", force: true do |t|
-    t.string   "name"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "matrizs", ["email"], name: "index_matrizs_on_email", unique: true
-  add_index "matrizs", ["reset_password_token"], name: "index_matrizs_on_reset_password_token", unique: true
-
 end

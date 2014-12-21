@@ -2,8 +2,9 @@
 	
 <h1><%= image_tag("logoultra250CinzaEscuro.png", size: "100x100", alt: "Ultravisao") %> Lojas Ultravisao</h1>
 
-
-
+<% if admin_signed_in? %>
+<%= link_to 'Cadastrar Loja', new_loja_path , class: "btn btn-primary" %>
+<% end %>
 <hr>
 
 

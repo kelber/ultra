@@ -39,7 +39,7 @@
 				<% if admin_signed_in? %>
 			<ul class="nav navbar-nav navbar-right">
 					<li>	
-					<%= link_to current_admin.email + " ( " "#{current_admin.name}"  " )" , edit_admin_registration_path %>
+					<%= link_to current_admin.email + full_name , edit_admin_registration_path %>
 					</li>
 					<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros <span class="caret"></span></a>
@@ -55,11 +55,13 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-    				
+         
+         
+	
+			<li>    				
 					<%= link_to 'Log Out', destroy_admin_session_path,  method: :delete %>
 					</li>
-			</ul>
-
+		 </ul>
 
 
 			<% else %>
@@ -106,8 +108,20 @@
 <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 <% end %>
  -->
+<!-- 
 
+ <% flash.each do |type,message| %>
+    <div data-alert class="alert-box success radius<%= tipo type %>">
+          <%= message %>
+  <a href="#" class="close">&times;</a>
+</div>
+  <% end %>
+
+ -->
 <div class="container">
+
+<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
