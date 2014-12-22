@@ -15,8 +15,10 @@ class VehicleCategoriesController < ApplicationController
 	def create
 		@vehicle_category = VehicleCategory.new(vehicle_category_params)
 		if @vehicle_category.save
-			redirect_to @vehicle_category, notice: "Categoria criada com sucesso" 
+			flash[:notice] = "Categoria criada com sucesso" 
+			redirect_to @vehicle_category
 		else
+			flash[:error] = "Nao cadastrado"
 			render 'new'
 		end
 	end
