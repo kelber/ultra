@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.8'
-gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -26,4 +25,9 @@ group :test do
 	gem 'capybara', '~> 2.4.4'
 	gem 'factory_girl_rails'		# cria factories when active records objects?
 	gem 'shoulda-matchers'			# powerful matchers for testing model & controllers
+end
+
+
+group :production do 
+gem 'pg'
 end
